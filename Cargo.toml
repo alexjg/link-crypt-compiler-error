@@ -26,7 +26,8 @@ version = "0.9.1"
 features = ["std", "derive"]
 
 [dependencies.radicle-git-ext]
-path = "../../radicle/radicle-link/git-ext"
+git = "https://github.com/radicle-dev/radicle-link.git"
+rev = "5d3266b470cd40bf9de8ea71d83e40ad43edf123"
 features = ["serde", "minicbor"]
 
 [dependencies.radicle-keystore]
