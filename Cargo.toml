@@ -1,0 +1,47 @@
+[package]
+name = "link-crypto"
+version = "0.1.0"
+authors = ["Kim Altintop <kim@eagain.st>", "The Radicle Team <dev@radicle.xyz>"]
+edition = "2018"
+license = "GPL-3.0-or-later"
+
+[lib]
+doctest = false
+test = false
+
+[dependencies]
+async-trait = "0.1"
+dyn-clone = "1.0"
+ed25519-zebra = "3.0"
+futures-lite = "1.12.0"
+multibase = "0.9"
+rand = "0.8"
+rustls = "0.19"
+thiserror = "1.0"
+tracing = "0.1"
+webpki = "0.21"
+
+[dependencies.minicbor]
+version = "0.9.1"
+features = ["std", "derive"]
+
+[dependencies.radicle-git-ext]
+path = "../../radicle/radicle-link/git-ext"
+features = ["serde", "minicbor"]
+
+[dependencies.radicle-keystore]
+git = "https://github.com/radicle-dev/radicle-keystore"
+rev = "00f8fb6135f8e4cd097a48e6f0700e08ce4abb04"
+features = [ "ssh-agent" ]
+
+[dependencies.serde]
+version = "1.0"
+features = ["derive"]
+
+[dependencies.zeroize]
+version = "1.1"
+features = ["zeroize_derive"]
+
+[patch.crates-io.thrussh-encoding]
+git = "https://github.com/FintanH/thrussh.git"
+branch = "generic-agent"
